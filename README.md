@@ -4,7 +4,6 @@ A dynamic and responsive client-side web application built with Vanilla JavaScri
 
 **[Live Demo Link Here]**
 
-![Employee Task Management Portal](https://i.imgur.com/your-screenshot-url.png) ---
 ## Features
 
 ### Manager Dashboard
@@ -32,26 +31,6 @@ A dynamic and responsive client-side web application built with Vanilla JavaScri
 * **Data Storage:** Browser `localStorage`
 * **Charts/Visualization:** Chart.js
 
-This project was built **without any front-end frameworks** (like React or Vue) or a backend server to demonstrate strong foundational skills in core web technologies.
-
----
-## Installation
-
-To run this project locally, follow these simple steps:
-
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
-    ```
-
-2.  **Navigate to the project directory:**
-    ```bash
-    cd your-repo-name
-    ```
-
-3.  **Run with a live server:**
-    * If you're using VS Code, you can use the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension. Right-click on `index.html` and select "Open with Live Server."
-
 ---
 ## Usage
 
@@ -63,9 +42,3 @@ To run this project locally, follow these simple steps:
     * **Employee:**
         * **Email:** `bob.s@example.com`
         * **Password:** `password`
-3.  The **Logout** button also functions as a **Reset** button, clearing all data from `localStorage` to return the application to its original state.
-
----
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
