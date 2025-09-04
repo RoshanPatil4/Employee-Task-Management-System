@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        .login-background {
+            background-image: url('https://imgs.search.brave.com/Fe2t9HICMCuKL2_lqi5LMHfbCivGoYfbSzPHJi50y9A/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/d2FsbHBhcGVyc2Fm/YXJpLmNvbS80OC8x/OC9vNHFhMFEuanBn');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .container {
+            max-width: 1200px;
+        }
+        .shadow-lg {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center p-8">
+
+    <div id="login-container" class="bg-white rounded-xl shadow-lg p-8 w-full max-w-md">
+        <h1 class="text-3xl font-bold text-gray-800 text-center mb-6">Employee Portal Login</h1>
+        <form id="login-form">
+            <div class="mb-4">
+                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                <input type="email" id="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2" required>
+            </div>
+            <div class="mb-6">
+                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                <input type="password" id="password" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2" required>
+            </div>
+            <div id="login-error" class="text-red-500 text-sm mb-4 hidden">Invalid email or password.</div>
+            <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-md transition-colors duration-200">
+                Login
+            </button>
+        </form>
+        <p class="text-center text-sm text-gray-500 mt-4">
+            Hint: Use `alice.j@example.com` for manager or `bob.s@example.com` for employee. Password is `password`.
+        </p>
+    </div>
+
+    <div id="app-container" class="container mx-auto hidden p-8 lg:p-12">
+        <div class="bg-white rounded-xl shadow-lg p-6 lg:p-10 mb-8">
+            <header class="flex flex-col md:flex-row justify-between items-center mb-6">
+                <h1 class="text-3xl font-bold text-gray-800 mb-4 md:mb-0">Employee Management Dashboard</h1>
+                <div class="flex items-center space-x-4">
+                    <span id="current-user-info" class="text-lg font-medium text-gray-600"></span>
+                    <button id="logout-btn" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-full transition-colors duration-200">
+                        Logout
+                    </button>
+                </div>
+            </header>
+            <div id="announcement-container" class="mb-6"></div> 
+            <main id="dashboard-content" class="min-h-[600px]"></main>
+        </div>
+    </div>
+
+    <div id="modal-container" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-2xl p-6 w-full max-w-lg">
+            <div class="flex justify-between items-center mb-4">
+                <h3 id="modal-title" class="text-xl font-bold text-gray-800"></h3>
+                <button onclick="closeModal()" class="text-gray-500 hover:text-gray-700">
+                    ✖
+                </button>
+            </div>
+            <div id="modal-body" class="mb-4"></div>
+            <div id="modal-footer" class="flex justify-end space-x-2"></div>
+        </div>
+    </div>
+
+<script src="js/db.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/manager.js"></script>
+<script src="js/employee.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
